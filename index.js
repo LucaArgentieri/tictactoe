@@ -17,14 +17,14 @@ const TicTacToe = class TicTacToe {
     init() {
 
 
-        singleBtn.addEventListener('click', evt => {
-            mode = false
-            btnContainer.classList.add('puff')
-            bot_container.classList.remove('puff')
-            if (!mode) {
-                this.setBotMoves()
-            }
-        })
+        // singleBtn.addEventListener('click', evt => {
+        //     mode = false
+        //     btnContainer.classList.add('puff')
+        //     bot_container.classList.remove('puff')
+        //     if (!mode) {
+        //         this.setBotMoves()
+        //     }
+        // })
 
         oneVsOne.addEventListener('click', evt => {
             mode = true
@@ -43,6 +43,7 @@ const TicTacToe = class TicTacToe {
             this.img = document.createElement('img')
             this.turn === 0 ? this.img.setAttribute('src', './img/times-solid.svg') : this.img.setAttribute('src', './img/circle-regular.svg')
             this.turn === 0 ? evt.target.setAttribute('id', 'x') : evt.target.setAttribute('id', 'o')
+
             evt.target.appendChild(this.img)
             this.checkTurn()
         })
@@ -50,13 +51,13 @@ const TicTacToe = class TicTacToe {
     }
 
     setBotMoves() {
-        bot_container.addEventListener('click', evt => {
-            this.img = document.createElement('img')
-            this.turn === 0 ? this.img.setAttribute('src', './img/times-solid.svg') : this.checkBotMoves()
-            this.turn === 0 ? evt.target.setAttribute('id', 'x') : evt.target.setAttribute('id', 'o')
-            evt.target.appendChild(this.img)
-            this.checkTurn()
-        })
+        // bot_container.addEventListener('click', evt => {
+        //     this.img = document.createElement('img')
+        //     this.turn === 0 ? this.img.setAttribute('src', './img/times-solid.svg') : this.checkBotMoves()
+        //     this.turn === 0 ? evt.target.setAttribute('id', 'x') : evt.target.setAttribute('id', 'o')
+        //     evt.target.appendChild(this.img)
+        //     this.checkTurn()
+        // })
     }
     checkBotMoves() {
         //Filtrare la lista di span disponibili dove creare img
@@ -208,9 +209,10 @@ const TicTacToe = class TicTacToe {
         ) {
             alert('O ha vinto')
             location.reload();
-        } else if (document.querySelectorAll('span#x').lengthlength >= 5 || document.querySelectorAll('span#o').length >= 5) {
+        } else if (document.querySelectorAll('span#x').lengthlength > 6 || document.querySelectorAll('span#o').length > 6) {
             alert('Draw')
             location.reload();
+
         }
 
 

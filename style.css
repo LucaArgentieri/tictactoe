@@ -35,8 +35,8 @@ main button {
   align-items: center;
 }
 
-.tris_container img {
-  height: 150px;
+.tris_container span img {
+  height: 165px;
 }
 
 .tris_bot_container {
